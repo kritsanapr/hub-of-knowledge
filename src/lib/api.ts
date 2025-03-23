@@ -1,12 +1,12 @@
-import { axiosInstance } from './axios';
-import { 
-  UseQueryOptions, 
+import { axiosInstance } from "./axios";
+import {
+  UseQueryOptions,
   UseMutationOptions,
   useQuery,
   useMutation,
-  useQueryClient
-} from '@tanstack/react-query';
-import { AxiosError } from 'axios';
+  useQueryClient,
+} from "@tanstack/react-query";
+import { AxiosError } from "axios";
 
 // Generic type for API response
 export type ApiResponse<T> = {
@@ -19,7 +19,10 @@ export type ApiResponse<T> = {
 export const useGetData = <T>(
   key: string[],
   url: string,
-  options?: Omit<UseQueryOptions<ApiResponse<T>, AxiosError>, 'queryKey' | 'queryFn'>
+  options?: Omit<
+    UseQueryOptions<ApiResponse<T>, AxiosError>,
+    "queryKey" | "queryFn"
+  >,
 ) => {
   return useQuery({
     queryKey: key,
@@ -34,7 +37,10 @@ export const useGetData = <T>(
 export const usePostData = <T, TVariables>(
   url: string,
   invalidateKey: string[],
-  options?: Omit<UseMutationOptions<ApiResponse<T>, AxiosError, TVariables>, 'mutationFn'>
+  options?: Omit<
+    UseMutationOptions<ApiResponse<T>, AxiosError, TVariables>,
+    "mutationFn"
+  >,
 ) => {
   const queryClient = useQueryClient();
 
@@ -56,7 +62,10 @@ export const usePostData = <T, TVariables>(
 export const usePutData = <T, TVariables>(
   url: string,
   invalidateKey: string[],
-  options?: Omit<UseMutationOptions<ApiResponse<T>, AxiosError, TVariables>, 'mutationFn'>
+  options?: Omit<
+    UseMutationOptions<ApiResponse<T>, AxiosError, TVariables>,
+    "mutationFn"
+  >,
 ) => {
   const queryClient = useQueryClient();
 
@@ -78,7 +87,10 @@ export const usePutData = <T, TVariables>(
 export const useDeleteData = <T>(
   url: string,
   invalidateKey: string[],
-  options?: Omit<UseMutationOptions<ApiResponse<T>, AxiosError, void>, 'mutationFn'>
+  options?: Omit<
+    UseMutationOptions<ApiResponse<T>, AxiosError, void>,
+    "mutationFn"
+  >,
 ) => {
   const queryClient = useQueryClient();
 

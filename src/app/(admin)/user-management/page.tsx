@@ -1,7 +1,5 @@
-import React from 'react'
+import React from "react";
 
 export default function UserManagementPage() {
-    return (
-        <div>User Management</div>
-    )
+  return <div>User Management</div>;
 }

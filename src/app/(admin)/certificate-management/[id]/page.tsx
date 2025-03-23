@@ -1,13 +1,11 @@
-import React from 'react'
+import React from "react";
 
 type Props = {
-    params: {
-        id: string
-    }
-}
+  params: {
+    id: string;
+  };
+};
 
 export default function UpdateCertificatePage({ params }: Readonly<Props>) {
-    return (
-        <div>UpdateCertificatePage</div>
-    )
+  return <div>UpdateCertificatePage {params.id}</div>;
 }

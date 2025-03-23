@@ -1,11 +1,11 @@
-import axios from 'axios';
+import axios from "axios";
 
-const baseURL = process.env.NEXT_PUBLIC_API_URL ?? 'http://localhost:3000';
+const baseURL = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:3000";
 
 export const axiosInstance = axios.create({
   baseURL,
   headers: {
-    'Content-Type': 'application/json',
+    "Content-Type": "application/json",
   },
 });
 
@@ -20,8 +20,8 @@ axiosInstance.interceptors.request.use(
     return config;
   },
   (error) => {
-    return Promise.reject(new Error(error?.message ?? 'Request failed'));
-  }
+    return Promise.reject(new Error(error?.message ?? "Request failed"));
+  },
 );
 
 // Response interceptor
@@ -32,6 +32,10 @@ axiosInstance.interceptors.response.use(
     if (error.response?.status === 401) {
       // Handle unauthorized
     }
-    return Promise.reject(new Error(error?.response?.data?.message ?? error?.message ?? 'Request failed'));
-  }
+    return Promise.reject(
+      new Error(
+        error?.response?.data?.message ?? error?.message ?? "Request failed",
+      ),
+    );
+  },
 );

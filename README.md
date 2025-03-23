@@ -21,26 +21,32 @@ A comprehensive knowledge management platform built with Next.js 15, React 19, a
 ## Getting Started
 
 1. Clone the repository:
+
 ```bash
 git clone https://github.com/your-username/hub-of-knowledge.git
 cd hub-of-knowledge
 ```
 
 2. Install dependencies:
+
 ```bash
 pnpm install
 ```
 
 3. Set up environment variables:
+
 ```bash
 cp .env.example .env.local
 ```
+
 Edit `.env.local` and add your configuration:
+
 ```
 NEXT_PUBLIC_API_URL=http://localhost:3000
 ```
 
 4. Start the development server:
+
 ```bash
 pnpm dev
 ```
